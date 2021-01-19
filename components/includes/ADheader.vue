@@ -18,8 +18,6 @@ export default {
         fnCloseAd(){
             this.$parent.isHeaderBannerShow = false;
 
-            console.log('this.data : ' , this);
-
             return false;
         }
     }
