@@ -10,7 +10,7 @@
 
 		<!-- 전문가 정보 영역 -->
 		<div class="expert-wrap" :style="bgImage">
-			<strong>월간베스트</strong>
+			<strong v-show="expert.best != undefined">{{expert.best}}</strong>
 			<br />
 			<strong>{{expert.name}}</strong>
 			<NuxtLink to="/">Home</NuxtLink>
@@ -28,9 +28,6 @@
 export default {
 	props:['expert'],
 	computed: {
-		checkData(){
-			console.log('this : ', this)
-		},
 		bgImage(){
 			return `background:url("${this.expert.image}") right bottom no-repeat; background-size:contain;`;
 		}

@@ -10,111 +10,49 @@
 	</VueSlickCarousel>
 	<!-- // 전문가 3인 롤링 -->
 
+	<ADMainMiddle />
+
+	<!-- Live 전문가 -->
+	<VueSlickCarousel class="carusel-expert" v-bind="slickOptions">
+		<Expert v-for="expert in dummyData.liveExpertList" v-bind:expert="expert" v-bind:key="expert.id" />
+	</VueSlickCarousel>
+	<!-- // Live 전문가 -->
+
+	<!-- 투자 전략 게시글 리스트 -->
+	<div class="title-with-btn">
+		<h2>투자 전략</h2>
+		<NuxtLink to="/">더보기 + </NuxtLink>
+	</div>
+	<ul class="board-list">
+		<BoardList v-for="item in dummyData.listInvestmentStrategy" v-bind:item="item" v-bind:key="item.id" />
+	</ul>
+	<!-- // 투자 전략 게시글 리스트 -->
+
+	<!-- 투자 전략 게시글 리스트 -->
+	<div class="title-with-btn">
+		<h2>추천주 게시판</h2>
+		<NuxtLink to="/">더보기 + </NuxtLink>
+	</div>
+	<ul class="board-list">
+		<BoardList v-for="item in dummyData.listRecommend" v-bind:item="item" v-bind:key="item.id" />
+	</ul>
+	<!-- // 투자 전략 게시글 리스트 -->
+
+	<!-- Live 전문가 -->
+	<div class="title-with-btn">
+		<h2>증권 VOD</h2>
+		<NuxtLink to="/">더보기 + </NuxtLink>
+	</div>
+	<VueSlickCarousel class="carusel-expert" v-bind="slickOptions">
+		<VodList v-for="vod in dummyData.vodList" v-bind:vod="vod" v-bind:key="vod.id" />
+	</VueSlickCarousel>
+	<!-- // Live 전문가 -->
 	
-	<div class="p-grid button-demo">
-		<div class="p-col-12 p-md-6">
-		<div class="card">
-			<h5 @click="clickTest($event)">Default</h5>
-			<Button type="button" class="p-mr-2 p-mb-2" @click.native="clickTest($event)">Test Button</Button>
-			<Button type="button" label="test" class="p-mr-2 p-mb-2" @click="clickTest($event)"></Button>
-			<Button label="Disabled" class="p-mr-2 p-mb-2" :disabled="true"></Button>
-			<button type="button" @click="clickTest($event)">button click</button>
-		</div>
-		</div>
-	</div>
-	<div class="p-grid button-demo">
-		<div class="p-col-12 p-md-6">
-		<div class="card">
-			<h5 @click="clickTest($event)">Default</h5>
-			<Button type="button" class="p-mr-2 p-mb-2" @click.native="clickTest($event)">Test Button</Button>
-			<Button type="button" label="test" class="p-mr-2 p-mb-2" @click="clickTest($event)"></Button>
-			<Button label="Disabled" class="p-mr-2 p-mb-2" :disabled="true"></Button>
-			<button type="button" @click="clickTest($event)">button click</button>
-		</div>
-		</div>
-	</div>
-	<div class="p-grid button-demo">
-		<div class="p-col-12 p-md-6">
-		<div class="card">
-			<h5 @click="clickTest($event)">Default</h5>
-			<Button type="button" class="p-mr-2 p-mb-2" @click.native="clickTest($event)">Test Button</Button>
-			<Button type="button" label="test" class="p-mr-2 p-mb-2" @click="clickTest($event)"></Button>
-			<Button label="Disabled" class="p-mr-2 p-mb-2" :disabled="true"></Button>
-			<button type="button" @click="clickTest($event)">button click</button>
-		</div>
-		</div>
-	</div>
-	<div class="p-grid button-demo">
-		<div class="p-col-12 p-md-6">
-		<div class="card">
-			<h5 @click="clickTest($event)">Default</h5>
-			<Button type="button" class="p-mr-2 p-mb-2" @click.native="clickTest($event)">Test Button</Button>
-			<Button type="button" label="test" class="p-mr-2 p-mb-2" @click="clickTest($event)"></Button>
-			<Button label="Disabled" class="p-mr-2 p-mb-2" :disabled="true"></Button>
-			<button type="button" @click="clickTest($event)">button click</button>
-		</div>
-		</div>
-	</div>
-	<div class="p-grid button-demo">
-		<div class="p-col-12 p-md-6">
-		<div class="card">
-			<h5 @click="clickTest($event)">Default</h5>
-			<Button type="button" class="p-mr-2 p-mb-2" @click.native="clickTest($event)">Test Button</Button>
-			<Button type="button" label="test" class="p-mr-2 p-mb-2" @click="clickTest($event)"></Button>
-			<Button label="Disabled" class="p-mr-2 p-mb-2" :disabled="true"></Button>
-			<button type="button" @click="clickTest($event)">button click</button>
-		</div>
-		</div>
-	</div>
-	<div class="p-grid button-demo">
-		<div class="p-col-12 p-md-6">
-		<div class="card">
-			<h5 @click="clickTest($event)">Default</h5>
-			<Button type="button" class="p-mr-2 p-mb-2" @click.native="clickTest($event)">Test Button</Button>
-			<Button type="button" label="test" class="p-mr-2 p-mb-2" @click="clickTest($event)"></Button>
-			<Button label="Disabled" class="p-mr-2 p-mb-2" :disabled="true"></Button>
-			<button type="button" @click="clickTest($event)">button click</button>
-		</div>
-		</div>
-	</div>
-	<div class="p-grid button-demo">
-		<div class="p-col-12 p-md-6">
-		<div class="card">
-			<h5 @click="clickTest($event)">Default</h5>
-			<Button type="button" class="p-mr-2 p-mb-2" @click.native="clickTest($event)">Test Button</Button>
-			<Button type="button" label="test" class="p-mr-2 p-mb-2" @click="clickTest($event)"></Button>
-			<Button label="Disabled" class="p-mr-2 p-mb-2" :disabled="true"></Button>
-			<button type="button" @click="clickTest($event)">button click</button>
-		</div>
-		</div>
-	</div>
 </div>
 </template>
 
 <script>
-var dummyData = {
-	expertList : [
-		{
-			name: '나리넷',
-			image: 'http://static.mtnw.co.kr/images/main/thumb_201903261058555084SP.png',
-			descTitle : '고래사냥 주식투자법',
-			descBody : '40년 경력의<br>진짜 전문가'
-		},
-		{
-			name: '강남큰손',
-			image: 'http://static.mtnw.co.kr/images/main/thumb_201903261334431106SP.png',
-			descTitle : '실전매매 최고수,',
-			descBody : '쪽집게 명품방송!'
-		},
-		{
-			name: '공명정지우',
-			image: 'http://static.mtnw.co.kr/images/main/thumb_201903261355448669SP.png',
-			descTitle : '최고는 최고를 알아본다',
-			descBody : '부자만들기 프로젝트<br>특급분석'
-		}
-	]
-}
-
+import * as dummyData from '../assets/js/dummy.js';
 export default {
 	data() {
 		return {
@@ -136,5 +74,25 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.title-with-btn {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #999;
+	padding: 10px 0;
+	margin-top: 10px;
+
+	h2 {
+		font-size: 22px;
+		font-weight: bold;
+		margin: 0;
+	}
+
+	a {
+		font-size: 12px;
+		color: #999;
+	}
+}
 </style>

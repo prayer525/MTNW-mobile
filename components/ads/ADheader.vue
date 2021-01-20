@@ -1,7 +1,7 @@
 <template>
     <div class="ad-header-wrap" :class="fnCheckShow">
         <span>(Header) 이벤트 배너영역</span>
-        <Button icon="pi pi-times" class="p-button-rounded p-button-danger p-button-text p-mr-2 p-mb-2 btn-close" @click.native="fnCloseAd" />
+        <Button icon="pi pi-times" class="btn-close" @click.native="fnCloseAd" />
     </div>
 </template>
 
