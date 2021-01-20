@@ -1,9 +1,12 @@
 <template>
 	<div class="container">
 		전문가 Live 페이지
-
+		<br />
 		<NuxtLink to="/">Index page</NuxtLink>
+		<br />
+		<br />
 		<NuxtLink to="/">Main Page</NuxtLink>
+		<br />
 
 		<div class="p-grid button-demo">
 			<div class="p-col-12 p-md-6">
