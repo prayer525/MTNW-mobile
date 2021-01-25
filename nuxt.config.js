@@ -1,3 +1,5 @@
+const webpack = require("webpack");
+
 export default {
 	// Global page headers (https://go.nuxtjs.dev/config-head)
 	head: {
@@ -12,9 +14,6 @@ export default {
 
 	// Global CSS (https://go.nuxtjs.dev/config-css)
 	css: [
-		'primevue/resources/themes/saga-blue/theme.css',
-		'primevue/resources/primevue.min.css',
-		'primeflex/primeflex.css',
 		'primeicons/primeicons.css',
 		'prismjs/themes/prism-coy.css',
 		'assets/layout/layout.scss',
@@ -29,7 +28,6 @@ export default {
 
 	// Auto import components (https://go.nuxtjs.dev/config-components)
 	components: [
-		{ path:'primevue/button'},
 		'~/components'
 	],
 
@@ -54,5 +52,14 @@ export default {
 
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
 	build: {
+		/**
+     * add external plugins
+     */
+    vendor: ["jquery", "bootstrap"],
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: "jquery"
+      })
+    ]
 	},
 }

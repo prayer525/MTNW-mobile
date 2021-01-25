@@ -1,35 +1,16 @@
 <template>
 	<div class="wrapper">
-		<Header class="headerless" :class="{fixed : isFixed}" />
-		<Nuxt />
-		<Footer />
+		<Header class="headerless" />
+		<div id="scroll-area" class="scroll-area">
+			<Nuxt />
+			<Footer />
+		</div>
 	</div>
 </template>
 
 <script>
 export default {
-	data(){
-		return ({
-			isFixed : false
-		})
-	},
-	beforeMount () {
-		window.addEventListener('scroll', this.handleScroll);
-	},
-	beforeDestroy() {
-		window.removeEventListener('scroll', this.handleScroll);
-	},
 	methods: {
-		handleScroll () {
-			this.isFixed = window.scrollY >= 0 ? true : false;
-		}
 	}
 }
 </script>
-
-<style>
-.wrapper {
-	display:flex;
-	flex-direction:column;
-}
-</style>

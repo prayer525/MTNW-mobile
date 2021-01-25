@@ -1,8 +1,8 @@
 <template>
 	<div class="header-wrap">
 		<div class="header">
-			<Button type="button" class="p-mr-2 p-mb-2 btn-login">로그인</Button>
-			<img src="~/assets/mtnw_logo.png" class="mtnw-logo" alt="MTNW Logo">
+			<NuxtLink to="/login" class="btn-login">Login</NuxtLink>
+			<NuxtLink to="/"><img src="~/assets/mtnw_logo.png" class="mtnw-logo" alt="MTNW Logo"></NuxtLink>
 			<button type="button" class="p-link layout-menu-button" @click="fnToggleMenu">
 				<span class="pi pi-bars"></span>
 			</button>

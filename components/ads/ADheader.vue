@@ -4,10 +4,9 @@
 	-->
 	<div class="ad-header-wrap" :class="fnCheckShow">
 			<span>(Header) 이벤트 배너영역</span>
-			<!--
-				Component Button 을 사용할 경우 @click 에 suffix로 ".native" 를 추가해야 동작한다.
-			-->
-			<Button icon="pi pi-times" class="btn-close" @click.native="fnCloseAd" />
+			<button type="button" class="btn-close" @click="fnCloseAd">
+					<span class="pi pi-times"></span>
+				</button>
 	</div>
 </template>
 

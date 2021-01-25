@@ -24,15 +24,8 @@ export default {
 	methods: {
 		handleScroll () {
 			var h = this.isHeaderBannerShow ? 50 : 0
-			this.isFixed = window.scrollY >= h ? true : false;
+			this.isFixed = window.scrollY > h ? true : false;
 		}
 	}
 }
 </script>
-
-<style>
-.wrapper {
-	display:flex;
-	flex-direction:column;
-}
-</style>

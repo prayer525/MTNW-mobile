@@ -11,8 +11,8 @@
 		<div class="p-grid button-demo">
 			<div class="p-col-12 p-md-6">
 				<div class="card">
-					<Button type="button" class="p-mr-2 p-mb-2" @click.native="fnAxiosAsyncTest()">Axios Test - Call 5 API (Async)</Button>
-					<Button type="button" class="p-mr-2 p-mb-2" @click.native="fnAxiosSyncTest()">Axios Test - Call 5 API (Sync)</Button>
+					<b-button type="button" class="p-mr-2 p-mb-2" @click="fnAxiosAsyncTest()">Axios Test - Call 5 API (Request step by step)</b-button>
+					<b-button type="button" class="p-mr-2 p-mb-2" @click="fnAxiosSyncTest()">Axios Test - Call 5 API (Request all)</b-button>
 				</div>
 			</div>
 		</div>

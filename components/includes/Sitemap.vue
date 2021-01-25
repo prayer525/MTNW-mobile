@@ -3,10 +3,12 @@
 		<div class="back-panel" @click="$parent.fnToggleMenu"><!-- opacity overlay --></div>
 		<div class="menu-wrap">
 			<div class="user-info-area">
-				<Button icon="pi pi-times" class="btn-close" @click.native="fnToggleMenu" />
-				<NuxtLink to="/login" @click.native="fnToggleMenu"><strong>로그인</strong></NuxtLink>
+				<button type="button" class="btn-close" @click="fnToggleMenu">
+					<span class="pi pi-times"></span>
+				</button>
+				<NuxtLink to="/login" @click="fnToggleMenu"><strong>로그인</strong></NuxtLink>
 				/
-				<NuxtLink to="/membership" @click.native="fnToggleMenu"><strong>회원가입</strong></NuxtLink>
+				<NuxtLink to="/membership" @click="fnToggleMenu"><strong>회원가입</strong></NuxtLink>
 				<p>로그인이 필요합니다.</p>
 			</div>
 

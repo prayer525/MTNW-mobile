@@ -4,7 +4,7 @@
 		<br />
 		<NuxtLink to="/">Index page</NuxtLink>
 		<br />
-		<NuxtLink to="/expert/Live">전문가 Live</NuxtLink>
+		<NuxtLink to="/expert/live">전문가 Live</NuxtLink>
 
 		<div class="carousel-wrapper">
 			<VueSlickCarousel v-bind="slickOptions">
