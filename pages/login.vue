@@ -8,8 +8,8 @@
 					<b-form-input type="text" placeholder="아이디" />
 					<b-form-input type="password" placeholder="비밀번호" />
 
-					<NuxtLink to="/" class="btn-block btn-red">로그인</NuxtLink>
-					<NuxtLink to="/membership" class="btn-block btn-red">회원가입</NuxtLink>
+					<NuxtLink to="./" class="btn-block btn-red">로그인</NuxtLink>
+					<NuxtLink to="./membership" class="btn-block btn-red">회원가입</NuxtLink>
 
 				</fieldset>
 			</form>

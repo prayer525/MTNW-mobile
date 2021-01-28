@@ -26,11 +26,11 @@
 		</b-modal>
 
 		<div class="btn-step-control">
-			<b-button type="button" class="btn-cancel p-button-rounded p-button-secondary" v-if="currentStep == 1" @click="regCancle">취소</b-button>
-			<b-button type="button" class="btn-prev p-button-rounded p-button-secondary" v-if="currentStep == 2" @click="prevStep">이전</b-button>
-			<b-button type="button" class="btn-next p-button-rounded" v-if="currentStep == 1" @click="nextStep">다음</b-button>
-			<b-button type="button" class="btn-reg p-button-rounded" v-if="currentStep == 2" @click="regRequest">가입하기</b-button>
-			<b-button type="button" class="btn-confirm p-button-rounded p-button-success" v-if="currentStep == 3" @click="regConfirm">확인</b-button>
+			<NuxtLink to="/" class="btn btn-secondary" v-if="currentStep == 1">취소</NuxtLink>
+			<b-button type="button" v-if="currentStep == 2" @click="prevStep">이전</b-button>
+			<b-button type="button" v-if="currentStep == 1" @click="nextStep">다음</b-button>
+			<b-button type="button" v-if="currentStep == 2" @click="regRequest">가입하기</b-button>
+			<NuxtLink to="/" class="btn btn-success btn-block" v-if="currentStep == 3">확인</NuxtLink>
 		</div>
 	</section>
 </template>
@@ -53,9 +53,6 @@ export default {
 		}
 	},
 	methods: {
-		regCancle() {
-			location.href = '/';
-		},
 		prevStep(){
 			this.currentStep -= 1;
 		},
@@ -66,9 +63,6 @@ export default {
 			this.modalShow = true;
 
 			this.currentStep += 1;
-		},
-		regConfirm(){
-			location.href = '/';
 		}
 	}
 };
