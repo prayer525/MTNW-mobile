@@ -57,12 +57,6 @@ export default {
 		baseURL: 'https://jsonplaceholder.typicode.com'
 	},
 
-	dist: {
-		options: {
-				compact: false
-		}
-	},
-
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
 	build: {
 		/**
@@ -74,6 +68,9 @@ export default {
       new webpack.ProvidePlugin({
         $: "jquery"
       })
-    ]
+		],
+		babel: {
+			compact: true
+		}
 	},
 }
