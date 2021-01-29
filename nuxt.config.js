@@ -2,7 +2,7 @@ const webpack = require("webpack");
 
 export default {
 	// deploy target : static's for the Github.io
-	target: 'static',
+	// target: 'static',
 	// Global page headers (https://go.nuxtjs.dev/config-head)
 	head: {
 		title: 'mtn-mobile',
@@ -34,9 +34,11 @@ export default {
 	],
 
 	// Server's root directory
+	/*
 	router: {
     base: '/JS/study/mtn/'
-  },
+	},
+	*/
 
 	// Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
 	buildModules: [

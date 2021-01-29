@@ -54,6 +54,7 @@
 <script>
 import * as dummyData from '../assets/js/dummy.js';
 export default {
+	transition: 'slide-right',
 	data() {
 		return {
 			dummyData : dummyData,

@@ -1,14 +1,14 @@
 <template>
 	<div class="menu-area" :class="fnCheckShowMenu">
-		<div class="back-panel" @click="$parent.fnToggleMenu"><!-- opacity overlay --></div>
+		<div class="back-panel" @click="$parent.checkFlag"><!-- opacity overlay --></div>
 		<div class="menu-wrap">
 			<div class="user-info-area">
-				<button type="button" class="btn-close" @click="fnToggleMenu">
+				<button type="button" class="btn-close" @click="$parent.checkFlag">
 					<span class="pi pi-times"></span>
 				</button>
-				<NuxtLink to="/login" @click="fnToggleMenu"><strong>로그인</strong></NuxtLink>
+				<NuxtLink to="/login" @click="$parent.checkFlag"><strong>로그인</strong></NuxtLink>
 				/
-				<NuxtLink to="/membership" @click="fnToggleMenu"><strong>회원가입</strong></NuxtLink>
+				<NuxtLink to="/membership" @click="$parent.checkFlag"><strong>회원가입</strong></NuxtLink>
 				<p>로그인이 필요합니다.</p>
 			</div>
 
@@ -31,26 +31,13 @@
 </template>
 
 <script>
-import $ from 'jquery';
-
 export default {
 	computed: {
-		fnCheckShowMenu() {
+		fnCheckShowMenu() {			
 			if(this.$parent.showMenu){
 				return 'show';
 			}
-		}
-	},
-	methods: {
-		fnToggleMenu(){
-			this.$parent.showMenu = !this.$parent.showMenu
-
-			if(this.$parent.showMenu){
-				$('body').addClass('block-scroll');
-			}else{
-				$('body').removeClass('block-scroll');
-			}
-		}
+		},
 	}
 }
 </script>

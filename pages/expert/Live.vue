@@ -30,6 +30,7 @@
 <script>
 export default {
 	layout: 'headerless',
+	transition: 'slide-right',
 	data(){
 		return ({
 			axiosData : null,

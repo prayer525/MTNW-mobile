@@ -127,6 +127,7 @@
 </template>
 <script>
 export default {
+	transition: 'slide-right',
 	data(){
 		return {
 			userinfo: {
