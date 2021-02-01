@@ -15,11 +15,23 @@ export default {
 			isHeaderBannerShow : true
 		})
 	},
+	head() {
+		return {
+			bodyAttrs: {
+				class: this.blockScroll
+			}
+		}
+	},
 	beforeMount () {
 		window.addEventListener('scroll', this.handleScroll);
 	},
 	beforeDestroy() {
 		window.removeEventListener('scroll', this.handleScroll);
+	},
+	computed: {
+		blockScroll(){
+			return this.$store.state.states.sitemapFlag ? 'block-scroll' : '';
+		}
 	},
 	methods: {
 		handleScroll () {

@@ -30,14 +30,7 @@ export default {
 	methods: {
 		checkFlag(){
 			// Sitemap show & hide 상태 변경
-			this.showMenu = !this.showMenu
-
-			// 변경된 상태에 따라 body 영역의 스크롤 hidden or auto
-			if(this.showMenu){
-				$('body').addClass('block-scroll')
-			}else{
-				$('body').removeClass('block-scroll')
-			}
+			this.showMenu = !this.showMenu;
 
 			/*
 				변경된 상태를 Global State에 저장
