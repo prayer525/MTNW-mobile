@@ -39,6 +39,9 @@ export default {
 			blockShow : false
 		})
 	},
+	mounted(){
+		this.fnAxiosAsyncTest()
+	},
 	methods: {
 		async fnAxiosAsyncTest(){
 			this.blockShow = true;
