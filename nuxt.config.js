@@ -2,10 +2,10 @@ const webpack = require("webpack");
 
 export default {
 	// deploy target : static's for the Github.io
-	// target: 'static',
+	target: 'static',
 	// Global page headers (https://go.nuxtjs.dev/config-head)
 	head: {
-		title: 'mtn-mobile',
+		title: 'MTNW-Mobile',
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' },
@@ -33,17 +33,16 @@ export default {
 		'~/components'
 	],
 
+	// move page animation
 	pageTransition: {
-    name: 'slide-right',
-    mode: 'out-in'
+		name: 'slide-right',
+		mode: 'out-in'
 	},	
 
 	// Server's root directory
-	/*
 	router: {
     base: '/JS/study/mtn/'
 	},
-	*/
 
 	// Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
 	buildModules: [
@@ -69,6 +68,7 @@ export default {
 		/**
      * add external plugins
      */
+		// analyze: true,
 		publicPath: '/nuxt/',
     vendor: ["jquery", "bootstrap"],
     plugins: [
