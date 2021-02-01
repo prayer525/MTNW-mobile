@@ -33,6 +33,11 @@ export default {
 		'~/components'
 	],
 
+	pageTransition: {
+    name: 'slide-right',
+    mode: 'out-in'
+	},	
+
 	// Server's root directory
 	/*
 	router: {

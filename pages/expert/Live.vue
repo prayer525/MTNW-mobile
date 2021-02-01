@@ -1,17 +1,21 @@
 <template>
 	<div class="container">
-		전문가 Live 페이지
 		<br />
-		<NuxtLink to="/">Index page</NuxtLink>
+		<NuxtLink to="/" class="btn btn-dark">Index page</NuxtLink>
+		<NuxtLink to="/main" class="btn btn-dark">Main Page</NuxtLink>
 		<br />
 		<br />
-		<NuxtLink to="/">Main Page</NuxtLink>
-		<br />
+
+		<p>Console에서 확인</p>
+
 
 		<div class="p-grid button-demo">
 			<div class="p-col-12 p-md-6">
 				<div class="card">
 					<b-button type="button" class="p-mr-2 p-mb-2" @click="fnAxiosAsyncTest()">Axios Test - Call 5 API (Request step by step)</b-button>
+					<br />
+					<b-button type="button" class="p-mr-2 p-mb-2" @click="fnAxiosAsyncChainTest()">Axios Test - Call 5 API (Request all with Async)</b-button>
+					<br />
 					<b-button type="button" class="p-mr-2 p-mb-2" @click="fnAxiosSyncTest()">Axios Test - Call 5 API (Request all)</b-button>
 				</div>
 			</div>
@@ -29,8 +33,6 @@
 
 <script>
 export default {
-	layout: 'headerless',
-	transition: 'slide-right',
 	data(){
 		return ({
 			axiosData : null,
@@ -40,24 +42,35 @@ export default {
 	methods: {
 		async fnAxiosAsyncTest(){
 			this.blockShow = true;
+			console.time('posts')
 			await this.$axios.get('/posts').then((data) => {
-				console.log('posts data : ' , data)
+				console.log('%c posts response : ', 'background: #222; color: #bada55' , data)
+				console.timeEnd('posts')
 			})
 
+			console.time('comments')
 			await this.$axios.get('/comments').then((data) => {
-				console.log('comments data : ' , data)
+				console.log('%c comments response : ', 'background: #222; color: #bada55' , data)
+				console.timeEnd('comments')
 			})
 
+			console.time('albums')
 			await this.$axios.get('/albums').then((data) => {
-				console.log('albums data : ' , data)
+				console.log('%c albums response : ', 'background: #222; color: #bada55' , data)
+				console.timeEnd('albums')
 			})
 
+			console.time('photos')
 			await this.$axios.get('/photos').then((data) => {
-				console.log('photos data : ' , data)
+				console.log('%c photos response : ', 'background: #222; color: #bada55' , data)
+				console.timeEnd('photos')
 			})
 
+			console.time('todos')
 			await this.$axios.get('/todos').then((data) => {
-				console.log('todos data : ' , data)
+				console.log('%c todos response : ', 'background: #222; color: #bada55' , data)
+				console.timeEnd('todos')
+
 				this.axiosData = JSON.stringify(data);
 			}).then(() => {
 				console.log('aa')
@@ -70,6 +83,25 @@ export default {
 				this.blockShow = false;
 			})
 		},
+		async fnAxiosAsyncChainTest(){
+			this.blockShow = true;
+
+			var api = [
+				this.$axios.get('/posts'),
+				this.$axios.get('/comments'),
+				this.$axios.get('/albums'),
+				this.$axios.get('/photos'),
+				this.$axios.get('/todos')
+			];
+
+			console.time('GetAllAsync')
+			await Promise.all(api).then((values) => {
+				this.blockShow = false;
+				console.log('%c GetAllAsync response : ', 'background: #222; color: #bada55' , values)
+				console.timeEnd('GetAllAsync')
+			})
+			console.log('end GetAllAsync')
+		},
 		fnAxiosSyncTest(){
 			this.blockShow = true;
 
@@ -81,10 +113,13 @@ export default {
 				this.$axios.get('/todos')
 			];
 
+			console.time('GetAllSync')
 			Promise.all(api).then((values) => {
 				this.blockShow = false;
-				console.log('values : ' , values)
+				console.log('%c GetAllSync response : ', 'background: #222; color: #bada55' , values)
+				console.timeEnd('GetAllSync')
 			})
+			console.log('end GetAllSync')
 		}
 	}
 }

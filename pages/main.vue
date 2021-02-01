@@ -1,10 +1,9 @@
 <template>
 	<div class="container">
-		Main page
+		<NuxtLink to="/" class="btn btn-dark">Index page</NuxtLink>
+		<NuxtLink to="/expert/live" class="btn btn-dark">전문가 Live</NuxtLink>
 		<br />
-		<NuxtLink to="/">Index page</NuxtLink>
 		<br />
-		<NuxtLink to="/expert/live">전문가 Live</NuxtLink>
 
 		<div class="carousel-wrapper">
 			<VueSlickCarousel v-bind="slickOptions">

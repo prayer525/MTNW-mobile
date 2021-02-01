@@ -11,6 +11,7 @@
 
 <script>
 export default {
+	// received props 'customData' from the parent component 
 	props:['customData'],
 	computed: {
 		testData(){

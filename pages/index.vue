@@ -1,7 +1,7 @@
 <template>
 <div class="container">
 	<div>
-		<NuxtLink to="/main">Go Main</NuxtLink>
+		<NuxtLink to="/main" class="btn btn-dark">Go Main</NuxtLink>
 	</div>
 
 	<!-- 전문가 3인 롤링 -->
@@ -54,7 +54,6 @@
 <script>
 import * as dummyData from '../assets/js/dummy.js';
 export default {
-	transition: 'slide-right',
 	data() {
 		return {
 			dummyData : dummyData,

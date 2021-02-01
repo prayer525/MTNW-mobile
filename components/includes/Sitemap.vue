@@ -1,5 +1,5 @@
 <template>
-	<div class="menu-area" :class="fnCheckShowMenu">
+	<div class="menu-area" :class="{'show': showMenu}">
 		<div class="back-panel" @click="$parent.checkFlag"><!-- opacity overlay --></div>
 		<div class="menu-wrap">
 			<div class="user-info-area">
@@ -32,12 +32,8 @@
 
 <script>
 export default {
+	props:['showMenu'],
 	computed: {
-		fnCheckShowMenu() {			
-			if(this.$parent.showMenu){
-				return 'show';
-			}
-		},
 	}
 }
 </script>
