@@ -1,5 +1,4 @@
 export const state = () =>({
-	counter: 0,
 	sitemapFlag: false
 })
 
