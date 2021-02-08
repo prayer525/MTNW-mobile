@@ -18,7 +18,7 @@
 </template>
 
 <script>
-// import * as GibberishAES from '~/assets/js/gibberish-aes.js';
+import * as GibberishAES from '~/assets/js/gibberish-aes.js';
 import CryptoJS from 'crypto-js';
 
 export default {
@@ -93,11 +93,26 @@ export default {
 
 			await this.getApi($param).then((res) => {
 
-				console.log('res[0].data: ' , res[0].data)
+				try{
 					
-			var bytes = CryptoJS.AES.decrypt(res[0].data, "96A11111A935EAF9811A577B6B6A7ABC", { mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7, iv: "96A11111A935EAF9" });
-			var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-			console.log(plaintext);
+					if(false){
+						var bytes = CryptoJS.AES.decrypt(res[0].data, "96A11111A935EAF9811A577B6B6A7ABC", { mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7, iv: "96A11111A935EAF9" });
+						console.log('bytes : ' , bytes)
+						var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+						console.log('plaintext : ' , plaintext);
+					}else{
+
+						console.log('GibberishAES : ' , GibberishAES)
+		
+						var resData = GibberishAES.aesDecrypt(res[0].data, "96A11111A935EAF9811A577B6B6A7ABC")
+
+						console.log('resData', resData)
+					}
+				}catch(e){
+					console.log('GibberishAES error : ' , e)
+				}
+
+
 
 			})
 
