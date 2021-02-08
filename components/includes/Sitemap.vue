@@ -1,6 +1,6 @@
 <template>
 	<div class="menu-area" :class="{'show': showMenu}">
-		<div class="back-panel" @click="$parent.checkFlag"><!-- opacity overlay --></div>
+		<div class="back-panel" @click="() => { if(this.showMenu) this.$parent.checkFlag() }"><!-- opacity overlay --></div>
 		<div class="menu-wrap">
 			<div class="user-info-area">
 				<button type="button" class="btn-close" @click="$parent.checkFlag">
@@ -34,6 +34,8 @@
 export default {
 	props:['showMenu'],
 	computed: {
+	},
+	methods: {
 	}
 }
 </script>

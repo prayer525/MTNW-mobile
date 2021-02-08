@@ -98,7 +98,7 @@ export default {
 			];
 
 			console.time('GetAllAsync')
-			await Promise.all(api).then((values) => {
+			Promise.all(api).then((values) => {
 				this.blockShow = false;
 				console.log('%c GetAllAsync response : ', 'background: #222; color: #bada55' , values)
 				console.timeEnd('GetAllAsync')

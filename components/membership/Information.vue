@@ -95,7 +95,7 @@
 						id="user-phone-middle"
 						v-model="certinfo.phoneMid"
 						placeholder="중간자리"
-						autocomplete="on"
+						autocomplete="off"
 						trim
 						:formatter="numberCheck" />
 
@@ -105,7 +105,7 @@
 						id="user-phone-last"
 						v-model="certinfo.phoneLast"
 						placeholder="마지막자리"
-						autocomplete="on"
+						autocomplete="off"
 						trim
 						:formatter="numberCheck" />
 

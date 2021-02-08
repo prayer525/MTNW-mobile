@@ -53,6 +53,7 @@
 
 <script>
 import * as dummyData from '../assets/js/dummy.js';
+
 export default {
 	data() {
 		return {
@@ -64,14 +65,14 @@ export default {
 			}
 		}
 	},
+	async created(){
+		
+	},
 	methods : {
-		clickTest(event) {
-			console.log('click test : ', event)
-
-			return false;
-		}
+		
 	}
 }
+
 </script>
 
 <style lang="scss">

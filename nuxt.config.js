@@ -25,7 +25,8 @@ export default {
 
 	// Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
 	plugins: [
-		{ src: './plugins/vue-slick-carousel.js' }
+		{ src: './plugins/vue-slick-carousel.js' },
+		{ src: './plugins/api-service.js' }
 	],
 
 	// Auto import components (https://go.nuxtjs.dev/config-components)
@@ -60,7 +61,7 @@ export default {
 
 	// Axios module configuration (https://go.nuxtjs.dev/config-axios)
 	axios: {
-		baseURL: 'https://jsonplaceholder.typicode.com'
+		baseURL: 'http://10.10.70.27:8080'
 	},
 
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
@@ -70,14 +71,24 @@ export default {
      */
 		// analyze: true,
 		publicPath: '/nuxt/',
-    vendor: ["jquery", "bootstrap"],
+    vendor: [
+			"jquery",
+			"bootstrap"
+		],
     plugins: [
       new webpack.ProvidePlugin({
         $: "jquery"
-      })
+			})
 		],
 		babel: {
-			compact: true
-		}
+			compact: true,
+			plugins: process.env.NODE_ENV !== 'production' ? [] : ["transform-remove-console"]
+		},
 	},
+	generate: {
+	},
+	cli: {
+		badgeMessages: ['process.env.NODE_ENV : ' + process.env.NODE_ENV],
+		bannerColor : 'yellow'
+	}
 }
